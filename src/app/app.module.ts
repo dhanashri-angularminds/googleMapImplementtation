@@ -7,6 +7,7 @@ import { MapComponent } from './components/map/map.component';
 import { StoreModule } from '@ngrx/store';
 import { mapReducer } from './store/map/map.reducer';
 import { HttpClientModule } from '@angular/common/http';
+import { NgxUiLoaderHttpModule, NgxUiLoaderModule } from 'ngx-ui-loader';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,9 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule,
     AppRoutingModule,
     StoreModule.forRoot({ map: mapReducer }),
-    HttpClientModule
+    HttpClientModule,
+    NgxUiLoaderModule,
+    NgxUiLoaderHttpModule.forRoot({ showForeground : true }),
   ],
   providers: [],
   bootstrap: [AppComponent]
