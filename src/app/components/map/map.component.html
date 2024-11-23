@@ -1,0 +1,39 @@
+<button
+  type="button"
+  #modalBtn
+  class="btn btn-primary btn-lg hide d-none"
+  data-toggle="modal"
+  data-target="#myModal"
+>
+  Region Deatils Modal
+</button>
+
+<div class="modal fade come-from-modal right" id="myModal" tabindex="-1">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="modal-header">
+          <h5 class="modal-title" id="sidebarModalLabel">Region Details</h5>
+        </div>
+        <div class="modal-body">
+          <div
+            class="region-details"
+            *ngIf="regionDetails$ | async as regionDetails"
+          >
+            <h5><strong>Area Name:</strong>{{ regionDetails.name }}</h5>
+            <p><strong>Description:</strong> {{ regionDetails.description }}</p>
+            <p>
+              <strong>Area Size:</strong> {{ regionDetails.areaSize }} sq km
+            </p>
+          </div>
+        </div>
+      </div>
+     
+    </div>
+  </div>
+</div>
+
+<div id="map" style="height:100vh"></div>
+
+
+
